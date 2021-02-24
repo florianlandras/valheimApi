@@ -1,5 +1,6 @@
 import flask
 from flask import Flask, request, render_template, session, redirect
+from flask_cors import CORS # https://flask-cors.readthedocs.io/en/latest/
 import requests
 import json
 import pandas as pd
@@ -14,6 +15,7 @@ df
 
 app = flask.Flask(__name__, template_folder="templates")
 app.config["DEBUG"] = True
+CORS(app)
 
 
 @app.route('/', methods=["POST",'GET'])
