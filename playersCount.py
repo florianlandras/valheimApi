@@ -3,7 +3,6 @@ import requests
 import json
 import matplotlib.pyplot as plt
 import requests
-
 import pandas as pd
 
 def playerNumber (startDate, endDate) :# exemple 2021-02-27
@@ -22,14 +21,14 @@ def playerNumber (startDate, endDate) :# exemple 2021-02-27
     df["date"] = df["date"].apply(lambda date: date.split("T")[0])
     ax = plt.gca()
     df.plot(kind='line',x='date',y='nombreDeJoueur',ax=ax)
-    plt.show()
+    #plt.show()
     df.to_csv(r'.\file.csv')
     return df
 
 exemple = playerNumber(
     "2021-03-01", "2021-03-04"
 )
-print(exemple)
+
 
 
 

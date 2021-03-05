@@ -34,10 +34,15 @@ def summary():
         mimetype='application/json'
     )
     return response
-@app.route('/graph', methods=["POST",'GET'])
 
+@app.route('/graph', methods=['GET'])
 def graph():
-    graph = 
+
+    startDate = request.args.get('startDate')
+    endDate = request.args.get('endDate')
+
+    playerNumber(startDate,endDate).head()
+    return startDate + endDate
 
 
 app.run()
