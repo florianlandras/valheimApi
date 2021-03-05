@@ -4,7 +4,7 @@ from flask_cors import CORS # https://flask-cors.readthedocs.io/en/latest/
 import requests
 import json
 import pandas as pd
-from pla
+from playersCount import playerNumber
 """
 data = requests.get("https://api.battlemetrics.com/servers/10377404")
 data = data.json()
@@ -34,4 +34,10 @@ def summary():
         mimetype='application/json'
     )
     return response
+@app.route('/graph', methods=["POST",'GET'])
+
+def graph():
+    graph = 
+
+
 app.run()
