@@ -4,6 +4,7 @@ from flask_cors import CORS # https://flask-cors.readthedocs.io/en/latest/
 import requests
 import json
 import pandas as pd
+from pla
 """
 data = requests.get("https://api.battlemetrics.com/servers/10377404")
 data = data.json()
