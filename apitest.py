@@ -41,8 +41,7 @@ def graph():
     startDate = request.args.get('startDate')
     endDate = request.args.get('endDate')
 
-    playerNumber(startDate,endDate).head()
-    return startDate + endDate
+    return playerNumber(startDate,endDate).to_json(orient="table")
 
 
 app.run()
