@@ -17,17 +17,20 @@ def playerNumber (startDate, endDate) :# exemple 2021-02-27
     df = df.rename(columns={"attributes.timestamp": "date", "attributes.max" : "nombreDeJoueur"})
     # Supprimer lheure de la colonne
     #df["date"] = df["date"].str.split("T", expand=True)
-    df = df.drop(["type", "attributes.value", "attributes.min"], axis = 1)
-    df["date"] = df["date"].apply(lambda date: date.split("T")[0])
+    df = df.drop(["type", "attributes.value", "attributes.min"], axis = 1) #TODO enlever lindex
+    df["date"] =  pd.to_datetime(df["date"],  yearfirst=True)
+    #df["date"] = df["date"].apply(lambda date: date.split("T")[0])
+    df = df.sort_values(by="date")
     ax = plt.gca()
     df.plot(kind='line',x='date',y='nombreDeJoueur',ax=ax)
     #plt.show()
     df.to_csv(r'.\file.csv')
-    return df
+    return plt.show()
 
 exemple = playerNumber(
-    "2021-03-01", "2021-03-04"
+    "2021-02-27", "2021-03-04"
 )
+print>(exemple)
 
 
 
