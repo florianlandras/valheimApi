@@ -1,10 +1,11 @@
 import flask
-from flask import Flask, request, render_template, session, redirect
 from flask_cors import CORS # https://flask-cors.readthedocs.io/en/latest/
 import requests
 import json
 import pandas as pd
 from playersCount import playerNumber
+from serverInfos import server
+from flask import Flask, request, render_template, session, redirect
 """
 data = requests.get("https://api.battlemetrics.com/servers/10377404")
 data = data.json()
@@ -27,13 +28,8 @@ def home():
 
 
 def summary():
-    data = requests.get("https://api.battlemetrics.com/servers/10377404")
-    data = data.json()
-    response = app.response_class(
-        response=json.dumps(data),
-        mimetype='application/json'
-    )
-    return response
+    
+    return server().to_json(orient="table")
 
 @app.route('/graph', methods=['GET'])
 def graph():
