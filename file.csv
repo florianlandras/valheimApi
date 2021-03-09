@@ -1,2 +1,2 @@
 ,id,name,address,ip,port,players,maxPlayers,rank,location,status,serverSteamId,private,createdAt,updatedAt,portQuery,country,queryStatus
-0,10377404,Fjord,,163.172.95.162,2456,0,64,39953,"[2.3488, 48.853409]",online,90143795633904641,False,2021-02-23T13:58:31.025Z,2021-03-08T05:59:13.903Z,2457,FR,valid
+0,10377404,Fjord,,163.172.95.162,2456,1,64,53419,"[2.3488, 48.853409]",online,90143827044146185,False,2021-02-23T13:58:31.025Z,2021-03-09T18:01:16.545Z,2457,FR,valid
