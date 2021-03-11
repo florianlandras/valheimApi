@@ -11,6 +11,8 @@ services:
          - LETSENCRYPT_EMAIL=morgan.pigeron@gmail.com
         expose:
          - "80" # Expose http port
+        ports:
+         - "80:5000"
       
         networks:
          - nginx-proxy # Connect this container to network named nginx-proxy, that will be described below
